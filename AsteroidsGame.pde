@@ -22,7 +22,10 @@ public void draw()
   bob.move();
 }
 public void keyPressed(){
-  if(key == 'd'){
+if(key == 'h'){
+    bob.hyperSpace();
+  }
+if(key == 'd'){
     bob.turn(30);
   }
 if(key == 'a'){
@@ -34,7 +37,5 @@ if(key == 'w'){
 if(key == 's'){
     bob.accelerate(-0.2);
   }
-if(key == 'h'){
-    bob.hyperSpace();
-  }
+
 }
