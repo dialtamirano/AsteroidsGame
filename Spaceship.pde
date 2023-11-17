@@ -20,11 +20,12 @@ public Spaceship(){
    myYspeed = 0; //holds the speed of travel in the x and y directions   
    myPointDirection = 0; //holds current direction the ship is pointing in degrees    
 }
-//public void setXspeed(double x){
-//  myXspeed = x;
-// }
+public void setXspeed(double x){
+  myXspeed = x;
+ }
 public void hyperSpace(){
   myXspeed = 0;
+  myPointDirection = (int)(Math.random()*360);
   myCenterX = (int)(Math.random()*590);
   myCenterY = (int)(Math.random()*590);
 }
