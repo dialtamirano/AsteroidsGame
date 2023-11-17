@@ -31,6 +31,9 @@ if(key == 'a'){
 if(key == 'w'){
     bob.accelerate(0.2);
   }
+if(key == 's'){
+    bob.accelerate(-0.2);
+  }
 if(key == 'h'){
     bob.hyperSpace();
   }
