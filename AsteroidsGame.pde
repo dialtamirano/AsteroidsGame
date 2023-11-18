@@ -4,7 +4,6 @@ Star[] nightSky = new Star[250];
 public void setup() 
 {
   //your code here
-noLoop();
   size(600, 600);
   background(0);
   //bob.turn(90);
