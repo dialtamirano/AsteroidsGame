@@ -3,7 +3,7 @@
 Spaceship bob = new Spaceship();
 Star[] nightSky = new Star[250];
 //Asteroid [] myAsteroid = new Asteroid[2];
-ArrayList <Asteroid> asteroids;
+ArrayList <Asteroid> asteroids = new ArrayList<Asteroid>();
 //Asteroid sue = new Asteroid();
 //Asteroid rocks = new Asteroid();
 //Asteroid ast = new Asteroid();
