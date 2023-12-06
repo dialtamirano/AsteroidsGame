@@ -14,4 +14,3 @@ public void show(){
   ellipse(myX, myY, 5, 5);
 }
 }
-
