@@ -2,8 +2,9 @@
 
 Spaceship bob = new Spaceship();
 Star[] nightSky = new Star[250];
-//Asteroid [] myAsteroid = new Asteroid[2];
-ArrayList <Asteroid> asteroids = new ArrayList<Asteroid>();
+Asteroid [] myAsteroid = new Asteroid[3];
+ArrayList <Bullet> bullets = new ArrayList <Bullet>();
+ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
 //Asteroid sue = new Asteroid();
 //Asteroid rocks = new Asteroid();
 //Asteroid ast = new Asteroid();
@@ -15,12 +16,6 @@ public void setup()
   //your code here
   size(600, 600);
   background(0);
-  
-  asteroids = new ArrayList();
-  
-  //  for (int i = 0; i <myAsteroid.length; i++) {
-  //  myAsteroid[i] = new Asteroid();
-  //}
     for (int i = 0; i < 20; i++) {
       asteroids.add(new Asteroid());
     }
@@ -32,21 +27,39 @@ public void draw()
 {
   //your code here
   background(0);
-  //for (int i = 0; i <myAsteroid.length; i++) {
-  //  myAsteroid[i].show();
-  //  myAsteroid[i].move();
-  //}
-  //for (int i = asteroids.size() - 1; i >= 0; i--) 
+  
+  for(int n = 0; n < asteroids.size(); n++){
+  for(int i = 0; i < bullets.size(); i++){
+    Bullet currentBullet = bullets.get(i);
+    Asteroid currentAsteroids = asteroids.get(n);
+    float distance = dist((float)currentBullet.getMyCenterX(), (float)currentBullet.getMyCenterY(), (float)currentAsteroids.getMyCenterX(), (float)currentAsteroids.getMyCenterY());
+    if(distance < 50){
+    asteroids.remove(n); 
+    bullets.remove(i);
+    break;
+     }
+    }
+ }
+   for(int i = 0; i < bullets.size(); i++){
+     bullets.get(i).show();
+     bullets.get(i).move();
+   
+ }
+     
     for(int i = 0; i < asteroids.size(); i++){
      
     Asteroid currentAsteroid = asteroids.get(i);
     
     float distance = dist((float) currentAsteroid.getMyCenterX(), (float) currentAsteroid.getMyCenterY(), (float) bob.getMyCenterX(), (float) bob.getMyCenterY());
     if(distance < 30){
+       asteroids.remove(i);
+    }
+    
+    else if (distance < 35 && asteroids.size() < 3) {
         asteroids.remove(i);
-        i--;
     }
 
+    
     currentAsteroid.move();
     currentAsteroid.show();
   
@@ -83,5 +96,8 @@ if(key == 's'){
   }
 if(key == 'h'){
     bob.hyperSpace();
+  }
+  if(key == ' '){
+    bullets.add(new Bullet(bob));
   }
 }
