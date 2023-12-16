@@ -22,8 +22,8 @@ public Asteroid(){
    myCC = 255;
    myCenterX = (int)(Math.random()*1000);
    myCenterY = (int)(Math.random()*1000); //holds center coordinates   
-   myXspeed = (Math.random()*10)-3; 
-   myYspeed = (Math.random()*10)-3; //holds the speed of travel in the x and y directions   
+   myXspeed = 1; 
+   myYspeed = 1; //holds the speed of travel in the x and y directions   
    myPointDirection = (int)(Math.random()*100); //holds current direction the ship is pointing in degrees    
   }
   public void move(){
