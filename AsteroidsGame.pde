@@ -18,6 +18,8 @@ public void setup()
   background(0);
     for (int i = 0; i < 20; i++) {
       asteroids.add(new Asteroid());
+      asteroids.get(i).show();
+      asteroids.get(i).move();
     }
   for(int i = 0; i < nightSky.length; i++){
     nightSky[i] = new Star();
