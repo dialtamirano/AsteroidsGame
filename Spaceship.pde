@@ -37,4 +37,13 @@ public void hyperSpace(){
   double getMyCenterY() {
     return myCenterY;
   }
+  double getMyXspeed() {
+    return myXspeed;
+  }
+  double getMyYspeed() {
+    return myYspeed;
+  }
+  double getMyPointDirection() {
+    return myPointDirection;
+  }
 }
